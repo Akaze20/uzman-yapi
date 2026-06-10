@@ -1,0 +1,72 @@
+.footer {
+  background-color: #101820;
+  color: white;
+  padding-top: 4rem;
+  margin-top: 4rem;
+}
+
+.footerGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 3rem;
+  margin-bottom: 3rem;
+}
+
+.brand h2 {
+  color: #ffffff;
+  margin-bottom: 0.5rem;
+}
+
+.brand span {
+  color: var(--accent);
+}
+
+.brand p {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.links h3, .contactInfo h3 {
+  color: #ffffff;
+  margin-bottom: 1.5rem;
+  font-size: 1.2rem;
+}
+
+.links ul {
+  list-style: none;
+  padding: 0;
+}
+
+.links li {
+  margin-bottom: 0.8rem;
+}
+
+.links a {
+  color: rgba(255, 255, 255, 0.7);
+  transition: color 0.3s ease;
+}
+
+.links a:hover {
+  color: var(--accent);
+}
+
+.contactInfo p {
+  color: rgba(255, 255, 255, 0.7);
+  margin-bottom: 0.8rem;
+}
+
+.contactInfo strong {
+  color: #ffffff;
+}
+
+.copyright {
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 1.5rem 0;
+  text-align: center;
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 0.9rem;
+}
+
+.copyright p {
+  color: rgba(255, 255, 255, 0.5);
+  margin: 0;
+}

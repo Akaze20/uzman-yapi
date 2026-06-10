@@ -1,0 +1,57 @@
+{
+  "Navigation": {
+    "home": "Ana Sayfa",
+    "about": "Hakkımızda",
+    "projects": "Projelerimiz",
+    "contact": "İletişim",
+    "quickLinks": "Hızlı Bağlantılar"
+  },
+  "Hero": {
+    "title": "Pasif Yangın Durdurucu Çözümleri",
+    "subtitle": "Türkiye ve dünyada 30 yılı aşkın süredir yangın durdurucu ve pasif yangın koruma sistemlerinde lider çözümler.",
+    "cta": "Projelerimizi Keşfedin"
+  },
+  "About": {
+    "title": "Uzman Yapı Hakkında",
+    "history": "Uzman Yapı, Türkiye ve dünyada yangın durdurucu ve pasif yangın koruma sistemlerinde lider çözümler sunmaktadır.",
+    "vision": "Çelik yapı yangın yalıtımı, yapısal derz elemanları ve yangına dayanıklı kaplamalar alanında uluslararası sertifikalı (UL, FM, Intertek) ürünlerimizle yapı güvenliğini en üst seviyeye taşıyoruz."
+  },
+  "Projects": {
+    "title": "Projelerimiz",
+    "desc": "Çeşitli sektörlerdeki başarılı uygulamalarımızı inceleyin."
+  },
+  "Contact": {
+    "title": "Bize Ulaşın",
+    "address": "Adres",
+    "email": "E-posta",
+    "phone": "Telefon",
+    "send": "Mesaj Gönder",
+    "copyrightText": "Tüm hakları saklıdır."
+  },
+  "Admin": {
+    "title": "Yönetici Paneli",
+    "overview": "Panel Özeti",
+    "projects": "Projeler",
+    "goToSite": "Siteye Git ↗",
+    "status": "Sistem Durumu",
+    "statusDesc": "Tüm sistemler aktif. Soldaki menüyü kullanarak projelerinizi düzenleyebilirsiniz.",
+    "mvpNotice": "Şifresiz MVP sürümündesiniz. İsterseniz daha sonra şifreli giriş eklenebilir.",
+    "newProject": "Yeni Proje Ekle",
+    "newProjectDesc": "Sitenizde sergilenecek yeni bir proje oluşturun.",
+    "saveProject": "Projeyi Kaydet",
+    "titleTr": "Başlık (TR)",
+    "titleEn": "Başlık (EN)",
+    "descTr": "Açıklama (TR)",
+    "descEn": "Açıklama (EN)",
+    "imageUrl": "Görsel URL (Opsiyonel)",
+    "loading": "Yükleniyor...",
+    "errorOccurred": "Bir hata oluştu.",
+    "confirmDelete": "Bu projeyi silmek istediğinize emin misiniz?",
+    "id": "ID",
+    "date": "Tarih",
+    "action": "İşlem",
+    "delete": "Sil",
+    "noProjects": "Henüz proje eklenmemiş.",
+    "siteSettings": "Site Ayarları"
+  }
+}

@@ -1,0 +1,29 @@
+.switcher {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-weight: 500;
+}
+
+.langBtn {
+  background: none;
+  border: none;
+  color: var(--text-muted);
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 0.9rem;
+  transition: color 0.3s ease;
+}
+
+.langBtn:hover {
+  color: var(--primary);
+}
+
+.langBtn.active {
+  color: var(--accent);
+  font-weight: 700;
+}
+
+.divider {
+  color: var(--border);
+}

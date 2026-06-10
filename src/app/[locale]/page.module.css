@@ -1,0 +1,128 @@
+.container {
+  min-height: 100vh;
+}
+
+.hero {
+  height: 90vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background: linear-gradient(to bottom right, var(--primary), #1a1a2e);
+  color: white;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero::after {
+  content: '';
+  position: absolute;
+  bottom: -50px;
+  right: -50px;
+  width: 400px;
+  height: 400px;
+  background: var(--accent);
+  filter: blur(150px);
+  opacity: 0.5;
+  border-radius: 50%;
+}
+
+.heroContent {
+  position: relative;
+  z-index: 1;
+  max-width: 800px;
+  padding: 0 2rem;
+}
+
+.heroContent h1 {
+  font-size: 4rem;
+  margin-bottom: 1.5rem;
+  color: white;
+}
+
+.heroContent p {
+  font-size: 1.5rem;
+  margin-bottom: 2.5rem;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.heroActions {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+}
+
+.icon {
+  vertical-align: middle;
+  margin-left: 0.5rem;
+}
+
+.introSection {
+  padding: 8rem 0;
+}
+
+.grid2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: stretch;
+}
+
+.visionBox {
+  padding: 3rem;
+  background: linear-gradient(135deg, var(--primary) 0%, #2a2a4a 100%);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.visionBox h3 {
+  color: white;
+  font-size: 1.8rem;
+  font-weight: 300;
+  line-height: 1.6;
+}
+
+.projectsTeaser {
+  padding: 6rem 0;
+  background-color: var(--secondary);
+}
+
+.teaserHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 4rem;
+}
+
+.grid3 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
+
+.projectCard {
+  overflow: hidden;
+  padding: 0;
+}
+
+.projectImgPlaceholder {
+  height: 250px;
+  background-color: var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  color: var(--text-muted);
+}
+
+.projectInfo {
+  padding: 2rem;
+}
+
+@media (max-width: 768px) {
+  .heroContent h1 { font-size: 2.5rem; }
+  .grid2, .grid3 { grid-template-columns: 1fr; }
+}

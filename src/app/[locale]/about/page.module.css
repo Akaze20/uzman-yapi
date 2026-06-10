@@ -1,0 +1,42 @@
+.aboutPage {
+  padding-top: 90px; /* Offset for fixed navbar */
+  min-height: 80vh;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.header h1 {
+  font-size: 3rem;
+  color: var(--primary);
+  display: inline-block;
+  position: relative;
+}
+
+.header h1::after {
+  content: '';
+  position: absolute;
+  width: 50%;
+  height: 4px;
+  bottom: -10px;
+  left: 25%;
+  background-color: var(--accent);
+  border-radius: 2px;
+}
+
+.contentBox {
+  padding: 3rem;
+}
+
+.contentBox h2 {
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+}
+
+.contentBox p {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: var(--text-muted);
+}

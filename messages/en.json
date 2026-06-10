@@ -1,0 +1,57 @@
+{
+  "Navigation": {
+    "home": "Home",
+    "about": "About Us",
+    "projects": "Projects",
+    "contact": "Contact",
+    "quickLinks": "Quick Links"
+  },
+  "Hero": {
+    "title": "Securing Structures with Passive Fire Protection",
+    "subtitle": "Leading solutions in fire stopping and passive fire protection systems for over 30 years.",
+    "cta": "Discover Our Projects"
+  },
+  "About": {
+    "title": "About Uzman Yapı",
+    "history": "For over 30 years in Turkey and around the world, Uzman Yapı has been providing leader solutions in fire stopping and passive fire protection systems.",
+    "vision": "We elevate building safety to the highest level with our internationally certified (UL, FM, Intertek) products in the field of steel structure fire insulation, structural joint elements, and fire-resistant coatings."
+  },
+  "Projects": {
+    "title": "Our Projects",
+    "desc": "Explore our portfolio of successful implementations across various sectors."
+  },
+  "Contact": {
+    "title": "Contact Us",
+    "address": "Address",
+    "email": "Email",
+    "phone": "Phone",
+    "send": "Send Message",
+    "copyrightText": "All rights reserved."
+  },
+  "Admin": {
+    "title": "Admin Panel",
+    "overview": "Overview",
+    "projects": "Projects",
+    "goToSite": "Go to Site ↗",
+    "status": "System Status",
+    "statusDesc": "All systems active. You can manage your projects using the menu on the left.",
+    "mvpNotice": "You are on the password-less MVP version. Password auth can be added later.",
+    "newProject": "Add New Project",
+    "newProjectDesc": "Create a new project to exhibit on your website.",
+    "saveProject": "Save Project",
+    "titleTr": "Title (TR)",
+    "titleEn": "Title (EN)",
+    "descTr": "Description (TR)",
+    "descEn": "Description (EN)",
+    "imageUrl": "Image URL (Optional)",
+    "loading": "Loading...",
+    "errorOccurred": "An error occurred.",
+    "confirmDelete": "Are you sure you want to delete this project?",
+    "id": "ID",
+    "date": "Date",
+    "action": "Action",
+    "delete": "Delete",
+    "noProjects": "No projects added yet.",
+    "siteSettings": "Site Settings"
+  }
+}
