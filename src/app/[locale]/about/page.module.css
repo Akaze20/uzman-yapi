@@ -27,7 +27,11 @@
 }
 
 .contentBox {
-  padding: 3rem;
+  padding: 4.5rem 4rem;
+  min-height: 280px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .contentBox h2 {

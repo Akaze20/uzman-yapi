@@ -45,15 +45,24 @@ export default function ProjectList({ projects, locale }: ProjectListProps) {
           <div style={{ 
             textAlign: 'center', 
             gridColumn: '1 / -1',
-            padding: '5rem 2rem',
+            minHeight: '400px',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            flexDirection: 'column',
             border: '1px dashed var(--border)',
-            borderRadius: '16px',
-            backgroundColor: 'rgba(255, 255, 255, 0.01)',
+            borderRadius: '24px',
+            backgroundColor: 'rgba(255, 255, 255, 0.02)',
             color: 'var(--text-muted)',
-            fontSize: '1.1rem',
-            margin: '2rem 0'
+            fontSize: '1.25rem',
+            margin: '2rem 0',
+            boxShadow: 'inset 0 4px 20px rgba(0, 0, 0, 0.2)',
+            padding: '2rem'
           }}>
-            {isTr ? 'Henüz proje eklenmemiş.' : 'No projects added yet.'}
+            <p>{isTr ? 'Henüz proje eklenmemiş.' : 'No projects added yet.'}</p>
+            <p style={{ fontSize: '0.95rem', marginTop: '0.8rem', opacity: 0.7 }}>
+              {isTr ? 'Yönetici panelinden yeni projeler ekleyebilirsiniz.' : 'You can add new projects from the admin panel.'}
+            </p>
           </div>
         ) : null}
         

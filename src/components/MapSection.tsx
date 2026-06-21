@@ -11,7 +11,7 @@ export default function MapSection({ locale }: MapSectionProps) {
         <iframe 
           src="https://maps.google.com/maps?q=G%C3%BCne%C5%9Ftepe%20Mahallesi%20U%C4%9Fur%20Sokak%20No%2016%20G%C3%BCng%C3%B6ren%20%C4%B0stanbul&t=&z=16&ie=UTF8&iwloc=&output=embed"
           width="100%" 
-          height="300" 
+          height="450" 
           style={{ border: 0 }} 
           allowFullScreen={true}
           loading="lazy"
