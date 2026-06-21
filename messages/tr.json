@@ -114,5 +114,17 @@
     "delete": "Sil",
     "noProjects": "Henüz proje eklenmemiş.",
     "siteSettings": "Site Ayarları"
+  },
+  "Faq": {
+    "title": "Merak Edilenler",
+    "desc": "Alçıpan, asma tavan, ses yalıtımı ve pasif yangın durdurucu uygulamalarımız hakkında en çok sorulan soruları yanıtladık.",
+    "q1": "Alçıpan ve asma tavan uygulamaları ne kadar sürer?",
+    "a1": "Projenin büyüklüğüne göre değişiklik gösterir. Standart bir oda alçıpan bölme duvar ve asma tavan işleri 1-2 günde tamamlanır. Komple ev ve ofis tadilatları ise 1-2 hafta sürebilmektedir.",
+    "q2": "Pasif yangın durdurucu (Firestop) sistemler neden zorunludur?",
+    "a2": "Türkiye Yangından Korunma Yönetmeliği ve uluslararası inşaat standartlarına göre, kablo ve boru geçişlerinde yangın ve duman yayılımını önlemek amacıyla sertifikalı yangın durdurucu bariyerler kullanılması yasal bir zorunluluktur.",
+    "q3": "Ses yalıtımı (akustik izolasyon) gürültüyü ne kadar engeller?",
+    "a3": "Kullandığımız yüksek yoğunluklu taşyünü, akustik alçıpanlar ve özel ses yalıtım bariyerleri ile odalar arasındaki hava kökenli sesleri %70 ila %90 oranında (ortalama 45-55 dB) sönümleyebiliyoruz.",
+    "q4": "İç mimari dekorasyon ve tadilat işlemlerinde anahtar teslim çalışıyor musunuz?",
+    "a4": "Evet; alçıpan, sıva, boya badana, elektrik tesisatı, parke döşeme dahil olmak üzere tüm tadilat süreçlerini tek elden, anahtar teslim olarak profesyonel ekiplerimizle yürütüyoruz."
   }
 }

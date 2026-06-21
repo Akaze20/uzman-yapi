@@ -4,12 +4,14 @@ import {ArrowRight} from 'lucide-react';
 import styles from './page.module.css';
 import { prisma } from '@/lib/prisma';
 import { getSetting } from '@/lib/settings';
+import FaqAccordion from '@/components/FaqAccordion';
 
 export default async function HomePage({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params;
   const t = await getTranslations({locale, namespace: 'Hero'});
   const tAbout = await getTranslations({locale, namespace: 'About'});
   const tProjects = await getTranslations({locale, namespace: 'Projects'});
+  const tFaq = await getTranslations({locale, namespace: 'Faq'});
 
   const recentProjects = await prisma.project.findMany({
     orderBy: { createdAt: 'desc' },
@@ -91,6 +93,18 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
           </div>
         </div>
       </section>
+
+      {/* FAQ Section */}
+      <FaqAccordion 
+        title={tFaq('title')} 
+        desc={tFaq('desc')} 
+        items={[
+          { id: 1, question: tFaq('q1'), answer: tFaq('a1') },
+          { id: 2, question: tFaq('q2'), answer: tFaq('a2') },
+          { id: 3, question: tFaq('q3'), answer: tFaq('a3') },
+          { id: 4, question: tFaq('q4'), answer: tFaq('a4') }
+        ]} 
+      />
     </div>
   );
 }

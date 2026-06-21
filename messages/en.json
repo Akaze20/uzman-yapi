@@ -114,5 +114,17 @@
     "delete": "Delete",
     "noProjects": "No projects added yet.",
     "siteSettings": "Site Settings"
+  },
+  "Faq": {
+    "title": "Frequently Asked Questions",
+    "desc": "We have answered the most frequently asked questions about our drywall, suspended ceiling, soundproofing, and passive firestopping implementations.",
+    "q1": "How long do drywall and suspended ceiling installations take?",
+    "a1": "It varies depending on the size of the project. Drywall partitions and suspended ceiling works for a standard room are completed in 1-2 days. Whole home or office renovations can take 1-2 weeks.",
+    "q2": "Why are passive firestop systems mandatory?",
+    "a2": "According to fire protection regulations and international building codes, installing certified firestop barriers at cable and pipe penetrations to prevent the spread of fire and dsmoke is a legal requirement.",
+    "q3": "How much noise does sound insulation block?",
+    "a3": "With our high-density rockwool, acoustic drywalls, and specialized sound barriers, we can absorb 70% to 90% (averaging 45-55 dB) of airborne sound transmission between rooms.",
+    "q4": "Do you offer turnkey solutions for interior decoration and renovations?",
+    "a4": "Yes; we run all renovation phases, including drywall, plastering, painting, electrical works, and flooring, from a single source as turnkey solutions with our professional crew."
   }
 }
