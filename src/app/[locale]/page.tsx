@@ -18,6 +18,11 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
     take: 3
   });
 
+  const faqs = await prisma.faq.findMany({
+    orderBy: { order: 'asc' }
+  });
+
+
   const heroTitle = await getSetting(`hero_title_${locale}`, t('title'));
   const heroSubtitle = await getSetting(`hero_subtitle_${locale}`, t('subtitle'));
   const heroCta = await getSetting(`hero_cta_${locale}`, t('cta'));
@@ -98,13 +103,20 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
       <FaqAccordion 
         title={tFaq('title')} 
         desc={tFaq('desc')} 
-        items={[
-          { id: 1, question: tFaq('q1'), answer: tFaq('a1') },
-          { id: 2, question: tFaq('q2'), answer: tFaq('a2') },
-          { id: 3, question: tFaq('q3'), answer: tFaq('a3') },
-          { id: 4, question: tFaq('q4'), answer: tFaq('a4') }
-        ]} 
+        items={faqs.length > 0
+          ? faqs.map(item => ({
+              id: item.id,
+              question: locale === 'tr' ? item.question_tr : item.question_en,
+              answer: locale === 'tr' ? item.answer_tr : item.answer_en
+            }))
+          : [
+              { id: 1, question: tFaq('q1'), answer: tFaq('a1') },
+              { id: 2, question: tFaq('q2'), answer: tFaq('a2') },
+              { id: 3, question: tFaq('q3'), answer: tFaq('a3') },
+              { id: 4, question: tFaq('q4'), answer: tFaq('a4') }
+            ]} 
       />
+
     </div>
   );
 }

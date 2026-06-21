@@ -113,7 +113,19 @@
     "action": "Action",
     "delete": "Delete",
     "noProjects": "No projects added yet.",
-    "siteSettings": "Site Settings"
+    "siteSettings": "Site Settings",
+    "faqs": "FAQs / Questions",
+    "newFaq": "Add New Question",
+    "editFaq": "Edit Question",
+    "faqQuestionTr": "Question (TR)",
+    "faqQuestionEn": "Question (EN)",
+    "faqAnswerTr": "Answer (TR)",
+    "faqAnswerEn": "Answer (EN)",
+    "faqOrder": "Order Number",
+    "saveFaq": "Save Question",
+    "noFaqs": "No questions added yet.",
+    "confirmDeleteFaq": "Are you sure you want to delete this question?",
+    "faqListDesc": "Manage the frequently asked questions on your website."
   },
   "Faq": {
     "title": "Frequently Asked Questions",

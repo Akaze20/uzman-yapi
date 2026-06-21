@@ -25,3 +25,15 @@ model Setting {
   value     String
   updatedAt DateTime @updatedAt
 }
+
+model Faq {
+  id          Int      @id @default(autoincrement())
+  question_tr String
+  question_en String
+  answer_tr   String
+  answer_en   String
+  order       Int      @default(0)
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+}
+

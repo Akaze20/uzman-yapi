@@ -113,7 +113,19 @@
     "action": "İşlem",
     "delete": "Sil",
     "noProjects": "Henüz proje eklenmemiş.",
-    "siteSettings": "Site Ayarları"
+    "siteSettings": "Site Ayarları",
+    "faqs": "Merak Edilenler",
+    "newFaq": "Yeni Soru Ekle",
+    "editFaq": "Soruyu Düzenle",
+    "faqQuestionTr": "Soru (TR)",
+    "faqQuestionEn": "Soru (EN)",
+    "faqAnswerTr": "Cevap (TR)",
+    "faqAnswerEn": "Cevap (EN)",
+    "faqOrder": "Sıralama No",
+    "saveFaq": "Soruyu Kaydet",
+    "noFaqs": "Henüz soru eklenmemiş.",
+    "confirmDeleteFaq": "Bu soruyu silmek istediğinize emin misiniz?",
+    "faqListDesc": "Sitenizdeki sıkça sorulan soruları yönetin."
   },
   "Faq": {
     "title": "Merak Edilenler",

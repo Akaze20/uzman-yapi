@@ -28,6 +28,7 @@ export default async function AdminLayout({
         <nav className={styles.sidebarNav}>
           <Link href="/admin">{t('overview')}</Link>
           <Link href="/admin/projects">{t('projects')}</Link>
+          <Link href="/admin/faqs">{t('faqs')}</Link>
           <Link href="/admin/settings">{t('siteSettings')}</Link>
           <Link href="/" target="_blank">{t('goToSite')}</Link>
         </nav>
