@@ -129,3 +129,24 @@
   .heroContent h1 { font-size: 2.5rem; }
   .grid2, .grid3 { grid-template-columns: 1fr; }
 }
+
+.mapSection {
+  width: 100%;
+  border-top: 1px solid var(--border);
+  line-height: 0;
+}
+
+.mapContainer {
+  position: relative;
+  width: 100%;
+  height: 450px;
+}
+
+.mapOverlay {
+  position: absolute;
+  bottom: 40px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 10;
+}
+
