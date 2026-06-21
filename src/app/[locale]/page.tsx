@@ -61,7 +61,7 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
               {homeAboutBtn}
             </Link>
           </div>
-          <div className={`glass-panel ${styles.visionBox}`}>
+          <div className={styles.visionBox}>
             <h3>{homeAboutVision}</h3>
           </div>
         </div>
