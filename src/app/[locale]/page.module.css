@@ -70,7 +70,7 @@
 
 .visionBox {
   padding: 3rem;
-  background: linear-gradient(135deg, var(--primary) 0%, #2a2a4a 100%);
+  background: var(--metal-gradient);
   color: white;
   display: flex;
   align-items: center;

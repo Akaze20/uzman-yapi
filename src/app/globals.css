@@ -12,6 +12,7 @@
   --glass-bg: rgba(255, 255, 255, 0.7);
   --glass-border: rgba(255, 255, 255, 0.2);
   --shadow: 0 4px 30px rgba(0, 0, 0, 0.05);
+  --metal-gradient: linear-gradient(135deg, #101820 0%, #2a2a4a 100%);
 }
 
 @media (prefers-color-scheme: dark) {
@@ -27,6 +28,7 @@
     --glass-bg: rgba(15, 17, 21, 0.7);
     --glass-border: rgba(255, 255, 255, 0.05);
     --shadow: 0 4px 30px rgba(0, 0, 0, 0.3);
+    --metal-gradient: linear-gradient(135deg, #3a4150 0%, #11141a 100%);
   }
 }
 
