@@ -100,22 +100,17 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
       </section>
 
       {/* FAQ Section */}
-      <FaqAccordion 
-        title={tFaq('title')} 
-        desc={tFaq('desc')} 
-        items={faqs.length > 0
-          ? faqs.map(item => ({
-              id: item.id,
-              question: locale === 'tr' ? item.question_tr : item.question_en,
-              answer: locale === 'tr' ? item.answer_tr : item.answer_en
-            }))
-          : [
-              { id: 1, question: tFaq('q1'), answer: tFaq('a1') },
-              { id: 2, question: tFaq('q2'), answer: tFaq('a2') },
-              { id: 3, question: tFaq('q3'), answer: tFaq('a3') },
-              { id: 4, question: tFaq('q4'), answer: tFaq('a4') }
-            ]} 
-      />
+      {faqs.length > 0 && (
+        <FaqAccordion 
+          title={tFaq('title')} 
+          desc={tFaq('desc')} 
+          items={faqs.map(item => ({
+            id: item.id,
+            question: locale === 'tr' ? item.question_tr : item.question_en,
+            answer: locale === 'tr' ? item.answer_tr : item.answer_en
+          }))} 
+        />
+      )}
 
     </div>
   );
