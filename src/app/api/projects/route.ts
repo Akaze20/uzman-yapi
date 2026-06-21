@@ -16,7 +16,7 @@ export async function GET() {
 export async function POST(request: Request) {
   try {
     const body = await request.json();
-    const { title_tr, title_en, desc_tr, desc_en, image, images } = body;
+    const { title_tr, title_en, desc_tr, desc_en, image, images, category } = body;
 
     if (!title_tr || !title_en) {
       return NextResponse.json({ error: 'Title is required for both languages' }, { status: 400 });
@@ -30,6 +30,7 @@ export async function POST(request: Request) {
         desc_en,
         image,
         images,
+        category: category || 'genel'
       }
     });
 

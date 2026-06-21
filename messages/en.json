@@ -2,9 +2,70 @@
   "Navigation": {
     "home": "Home",
     "about": "About Us",
+    "services": "Services",
     "projects": "Projects",
     "contact": "Contact",
     "quickLinks": "Quick Links"
+  },
+  "Services": {
+    "title": "Our Services",
+    "desc": "We provide professional solutions in drywall installations, passive fire protection, and sound insulation with our expert team.",
+    "viewProjects": "View Completed Projects Under This Service",
+    "noProjects": "No projects added under this service yet.",
+    "quickContact": "Get Detailed Information & Quote",
+    "whatsappQuote": "Get Quote via WhatsApp",
+    "alcipan": {
+      "title": "Drywall & Suspended Ceiling Systems",
+      "metaTitle": "Istanbul Drywall Installer & Suspended Ceilings - Uzman YP",
+      "metaDesc": "Professional drywall partition walls, suspended ceilings, plastering, and decorative coving. Quality drywall contractor services in Istanbul.",
+      "desc": "We design aesthetic and functional spaces using drywall partition walls and suspended ceiling systems with premium materials to partition spaces, provide ceiling aesthetics, and increase thermal/sound insulation.",
+      "features": [
+        "Drywall Partition Wall Systems",
+        "Metal Stud Suspended Ceilings",
+        "Gypsum Plaster & Painting Works",
+        "Decorative Coving & Light Trough",
+        "Thermal & Sound Insulated Drywall Installations"
+      ]
+    },
+    "yangin-yalitimi": {
+      "title": "Firestopping & Passive Fire Protection",
+      "metaTitle": "Passive Fire Protection & Firestop Barriers - Uzman YP",
+      "metaDesc": "Internationally certified passive firestop systems, fire-rated partition walls, and joints to prevent fire propagation in structures.",
+      "desc": "We install internationally certified passive firestopping (Firestop) systems at utility crossings and joints to prevent fire spread, maximizing structural fire safety.",
+      "features": [
+        "Cable & Pipe Penetration Firestops",
+        "Fire-Rated Partition Walls",
+        "Structural Expansion Joint Seals",
+        "Firestop Mortar & Collar Applications",
+        "Internationally Certified (UL, FM approved) Systems"
+      ]
+    },
+    "ses-yalitimi": {
+      "title": "Sound & Acoustic Insulation",
+      "metaTitle": "Soundproofing & Acoustic Insulation Contractor - Uzman YP",
+      "metaDesc": "Professional soundproofing solutions for acoustic comfort. Wall, floor, and ceiling sound insulation systems.",
+      "desc": "We implement professional soundproofing systems for floors, ceilings, and walls to minimize sound transmission between floors/rooms, prevent noise pollution, and ensure acoustic comfort.",
+      "features": [
+        "Wall Soundproofing Systems",
+        "Impact Noise & Under-Screed Insulation",
+        "Suspended Ceiling Acoustic Insulation",
+        "Acoustic Foam & Panel Installations",
+        "High-Density Rockwool & Sound Barrier Integrations"
+      ]
+    },
+    "dekorasyon": {
+      "title": "Interior Decoration & Renovations",
+      "metaTitle": "Interior Architecture & Turnkey Home Office Renovation - Uzman YP",
+      "metaDesc": "Turnkey comprehensive home and office renovations, painting, decoration, and architectural design implementations.",
+      "desc": "We run turnkey renovation, decoration, interior architectural design, and painting works with our professional teams to make your living and working spaces aesthetic, comfortable, and functional.",
+      "features": [
+        "Turnkey Home & Office Renovation",
+        "Interior Design & Consultation",
+        "Painting & Wallpaper Applications",
+        "Floor Covering (Laminate Flooring etc.)",
+        "Kitchen & Bathroom Remodeling"
+      ]
+    }
   },
   "Hero": {
     "title": "Securing Structures with Passive Fire Protection",

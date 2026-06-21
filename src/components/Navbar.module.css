@@ -59,6 +59,61 @@
   gap: 1rem;
 }
 
+/* Dropdown Menu Styles */
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdownToggle {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.dropdownMenu {
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--glass-bg);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid var(--glass-border);
+  border-radius: 8px;
+  padding: 0.5rem 0;
+  min-width: 250px;
+  display: none;
+  flex-direction: column;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+  z-index: 1000;
+  margin-top: 0.5rem;
+}
+
+.dropdownMenu a {
+  padding: 0.6rem 1.25rem;
+  font-size: 0.9rem;
+  font-weight: 400;
+  color: var(--text-muted);
+  text-decoration: none;
+  white-space: nowrap;
+  transition: all 0.2s ease;
+}
+
+.dropdownMenu a::after {
+  display: none; /* Disable underline effect in dropdown items */
+}
+
+.dropdownMenu a:hover {
+  color: var(--accent);
+  background: rgba(255, 255, 255, 0.03);
+}
+
+.dropdown:hover .dropdownMenu {
+  display: flex;
+}
+
+
 @media (max-width: 768px) {
   .navLinks {
     display: none;

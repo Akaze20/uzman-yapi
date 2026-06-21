@@ -2,9 +2,70 @@
   "Navigation": {
     "home": "Ana Sayfa",
     "about": "Hakkımızda",
+    "services": "Hizmetlerimiz",
     "projects": "Projelerimiz",
     "contact": "İletişim",
     "quickLinks": "Hızlı Bağlantılar"
+  },
+  "Services": {
+    "title": "Hizmetlerimiz",
+    "desc": "Uzman kadromuzla alçıpan, pasif yangın durdurucu ve ses izolasyonu alanlarında profesyonel çözümler sunuyoruz.",
+    "viewProjects": "Bu Hizmete Ait Projeleri İnceleyin",
+    "noProjects": "Bu hizmete ait henüz proje eklenmemiş.",
+    "quickContact": "Detaylı Bilgi ve Fiyat Teklifi Alın",
+    "whatsappQuote": "WhatsApp ile Teklif Al",
+    "alcipan": {
+      "title": "Alçıpan ve Asma Tavan Sistemleri",
+      "metaTitle": "İstanbul Alçıpan Ustası & Asma Tavan Yapımı - Uzman YP",
+      "metaDesc": "Profesyonel alçıpan bölme duvar, asma tavan, alçı sıva ve dekoratif kartonpiyer uygulamaları. İstanbul Güngören alçıpan ustası ve tadilat hizmetleri.",
+      "desc": "Yaşam alanlarınızı bölümlere ayırmak, estetik tavan çözümleri sunmak ve ısı/ses yalıtımını artırmak için alçıpan bölme duvar ve asma tavan sistemlerinde en kaliteli malzemelerle çalışıyoruz.",
+      "features": [
+        "Alçıpan Bölme Duvar Sistemleri",
+        "Metal İskeletli Asma Tavan",
+        "Alçı Sıva ve Boya Badana İşleri",
+        "Dekoratif Kartonpiyer ve Işık Bandı",
+        "Isı ve Ses Yalıtımlı Duvar Uygulamaları"
+      ]
+    },
+    "yangin-yalitimi": {
+      "title": "Yangın Yalıtımı ve Yangın Durdurucu Bariyerler",
+      "metaTitle": "Pasif Yangın Durdurucu Bariyer & Yangın Yalıtımı - Uzman YP",
+      "metaDesc": "Binalarda yangın yayılımını engelleyen uluslararası sertifikalı pasif yangın durdurucu bariyerler, yangın yalıtımlı bölme duvarlar ve yapısal derz çözümleri.",
+      "desc": "Binaların yangın güvenliğini en üst seviyeye çıkarmak amacıyla, tesisat geçişlerinde ve yapısal derzlerde yangın yayılımını engelleyen uluslararası sertifikalı pasif yangın durdurucu (Firestop) sistemler uyguluyoruz.",
+      "features": [
+        "Kablo ve Boru Geçişi Yangın Durdurucuları",
+        "Yangına Dayanıklı Bölme Duvarlar",
+        "Yapısal Dilatasyon Derzi Yalıtımları",
+        "Yangın Durdurucu Harç ve Kelepçe Uygulamaları",
+        "Uluslararası Sertifikalı (UL, FM onaylı) Sistemler"
+      ]
+    },
+    "ses-yalitimi": {
+      "title": "Ses Yalıtımı ve Akustik İzolasyon",
+      "metaTitle": "Ses Yalıtımı & Akustik İzolasyon Firmaları - Uzman YP",
+      "metaDesc": "Gürültüyü önleyen, akustik konfor sağlayan profesyonel ses yalıtım çözümleri. Duvar, zemin ve tavan ses izolasyon uygulamaları.",
+      "desc": "Katlar ve odalar arasındaki ses geçişini minimuma indirmek, gürültü kirliliğini önlemek ve akustik konfor sağlamak amacıyla zemin, tavan ve duvarlar için profesyonel ses yalıtım çözümleri uyguluyoruz.",
+      "features": [
+        "Duvar Ses Yalıtım Sistemleri",
+        "Zemin Darbe Sesi ve Şap Altı İzolasyonu",
+        "Asma Tavan Akustik Ses Yalıtımı",
+        "Akustik Sünger ve Panel Uygulamaları",
+        "Yüksek Yoğunluklu Taşyünü ve Bariyer Entegrasyonları"
+      ]
+    },
+    "dekorasyon": {
+      "title": "İç Mimari Dekorasyon ve Tadilat",
+      "metaTitle": "İç Mimari Dekorasyon & Komple Ev İşyeri Tadilatı - Uzman YP",
+      "metaDesc": "Anahtar teslim komple ev ve iş yeri tadilatı, boya, dekorasyon ve mimari tasarım uygulamaları ile yaşam alanlarınıza değer katıyoruz.",
+      "desc": "Yaşam ve çalışma alanlarınızı estetik, konforlu ve işlevsel hale getirmek için anahtar teslim tadilat, dekorasyon, iç mimari tasarım ve boya işlerini profesyonel ekiplerimizle yürütüyoruz.",
+      "features": [
+        "Anahtar Teslim Ev ve Ofis Tadilatı",
+        "İç Mimari Tasarım ve Danışmanlık",
+        "Boya Badana ve Duvar Kağıdı Uygulamaları",
+        "Zemin Kaplama (Laminat Parke vb.)",
+        "Mutfak ve Banyo Dekorasyonu"
+      ]
+    }
   },
   "Hero": {
     "title": "Pasif Yangın Durdurucu Çözümleri",

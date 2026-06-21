@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://uzman-yapi-kczv.vercel.app/sitemap.xml

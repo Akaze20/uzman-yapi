@@ -16,7 +16,8 @@ export default function NewProject() {
     title_en: '',
     desc_tr: '',
     desc_en: '',
-    image: ''
+    image: '',
+    category: 'genel'
   });
   const [galleryImages, setGalleryImages] = useState<string[]>([]);
 
@@ -171,6 +172,31 @@ export default function NewProject() {
                 style={{width: '100%', padding: '0.8rem', border: '1px solid var(--border)', borderRadius: '8px', fontFamily: 'inherit'}}
               />
             </div>
+          </div>
+
+          {/* Category Dropdown */}
+          <div>
+            <label style={{display: 'block', marginBottom: '0.5rem', fontWeight: 'bold'}}>Proje Kategorisi (Hizmet Alanı)</label>
+            <select
+              value={form.category}
+              onChange={e => setForm({...form, category: e.target.value})}
+              style={{
+                width: '100%',
+                padding: '0.8rem',
+                border: '1px solid var(--border)',
+                borderRadius: '8px',
+                backgroundColor: 'var(--secondary)',
+                color: 'var(--text)',
+                fontSize: '1rem',
+                cursor: 'pointer'
+              }}
+            >
+              <option value="genel">Genel / Diğer Projeler</option>
+              <option value="alcipan">Alçıpan ve Asma Tavan Sistemleri</option>
+              <option value="yangin-yalitimi">Yangın Yalıtımı ve Yangın Durdurucu</option>
+              <option value="ses-yalitimi">Ses İzolasyonu ve Akustik</option>
+              <option value="dekorasyon">İç Mimari Dekorasyon ve Tadilat</option>
+            </select>
           </div>
 
           {/* Cover Photo File Upload */}

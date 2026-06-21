@@ -5,10 +5,13 @@ import {notFound} from 'next/navigation';
 import '../globals.css';
 import RootLayoutClient from '@/components/RootLayoutClient';
 import { getSetting } from '@/lib/settings';
+import LocalSchema from '@/components/LocalSchema';
+
+export const dynamic = 'force-dynamic';
 
 export const metadata = {
-  title: 'Uzman Yapı | Pasif Yangın Durdurucu',
-  description: 'Türkiye ve dünyada yangın durdurucu sistemlerde lider.',
+  title: 'Uzman YP | Alçıpan, Yangın Yalıtımı ve Ses İzolasyonu',
+  description: 'İstanbul Güngören merkezli alçıpan, asma tavan, pasif yangın durdurucu bariyerler, ses yalıtımı ve iç mimari tadilat hizmetlerinde uzman inşaat ekibi.',
 };
 
 export default async function LocaleLayout({
@@ -41,6 +44,9 @@ export default async function LocaleLayout({
 
   return (
     <html lang={locale}>
+      <head>
+        <LocalSchema />
+      </head>
       <body>
         <NextIntlClientProvider messages={messages}>
           <RootLayoutClient

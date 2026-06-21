@@ -16,6 +16,7 @@ model Project {
   desc_en     String
   image       String?  // Cover image
   images      String?  // Additional gallery images (comma-separated URLs)
+  category    String   @default("genel")
   createdAt   DateTime @default(now())
   updatedAt   DateTime @updatedAt
 }
