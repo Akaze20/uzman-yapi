@@ -42,9 +42,19 @@ export default function ProjectList({ projects, locale }: ProjectListProps) {
     <>
       <div className={styles.grid}>
         {projects.length === 0 ? (
-          <p style={{ textAlign: 'center', gridColumn: '1 / -1' }}>
+          <div style={{ 
+            textAlign: 'center', 
+            gridColumn: '1 / -1',
+            padding: '5rem 2rem',
+            border: '1px dashed var(--border)',
+            borderRadius: '16px',
+            backgroundColor: 'rgba(255, 255, 255, 0.01)',
+            color: 'var(--text-muted)',
+            fontSize: '1.1rem',
+            margin: '2rem 0'
+          }}>
             {isTr ? 'Henüz proje eklenmemiş.' : 'No projects added yet.'}
-          </p>
+          </div>
         ) : null}
         
         {projects.map((project, index) => (
