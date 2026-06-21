@@ -1,17 +1,12 @@
 export default function GlobalLoading() {
   return (
     <div style={{
-      position: 'fixed',
-      top: 0,
-      left: 0,
-      width: '100vw',
-      height: '100vh',
       display: 'flex',
       flexDirection: 'column',
       alignItems: 'center',
       justifyContent: 'center',
-      backgroundColor: 'var(--background)',
-      zIndex: 9999,
+      minHeight: '60vh',
+      width: '100%',
       gap: '1rem'
     }}>
       <div className="spinner" />
@@ -27,7 +22,7 @@ export default function GlobalLoading() {
         .spinner {
           width: 50px;
           height: 50px;
-          border: 3px solid var(--border);
+          border: 3px solid rgba(255, 255, 255, 0.05);
           border-radius: 50%;
           border-top-color: var(--accent);
           animation: spin 1s ease-in-out infinite;
