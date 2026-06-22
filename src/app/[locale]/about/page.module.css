@@ -1,6 +1,7 @@
 .aboutPage {
   padding-top: 90px; /* Offset for fixed navbar */
   min-height: 80vh;
+  padding-bottom: 6rem;
 }
 
 .header {
