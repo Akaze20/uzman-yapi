@@ -1,7 +1,7 @@
 .servicesPage {
   padding-top: 100px;
   min-height: 80vh;
-  padding-bottom: 5rem;
+  padding-bottom: 10rem;
 }
 
 .header {
@@ -111,7 +111,7 @@
 .detailPage {
   padding-top: 100px;
   min-height: 80vh;
-  padding-bottom: 5rem;
+  padding-bottom: 10rem;
 }
 
 .detailGrid {
