@@ -22,10 +22,24 @@ export default function EditProject({ params }: { params: Promise<{ locale: stri
     category: 'genel'
   });
   const [galleryImages, setGalleryImages] = useState<string[]>([]);
+  const [services, setServices] = useState<{ id: number; slug: string; title_tr: string }[]>([]);
 
   useEffect(() => {
     fetchProject();
+    fetchServices();
   }, [id]);
+
+  const fetchServices = async () => {
+    try {
+      const res = await fetch('/api/services');
+      if (res.ok) {
+        const data = await res.json();
+        setServices(data);
+      }
+    } catch (err) {
+      console.error('Failed to load services:', err);
+    }
+  };
 
   const fetchProject = async () => {
     try {
@@ -233,10 +247,11 @@ export default function EditProject({ params }: { params: Promise<{ locale: stri
               }}
             >
               <option value="genel">Genel / Diğer Projeler</option>
-              <option value="alcipan">Alçıpan ve Asma Tavan Sistemleri</option>
-              <option value="yangin-yalitimi">Yangın Yalıtımı ve Yangın Durdurucu</option>
-              <option value="ses-yalitimi">Ses İzolasyonu ve Akustik</option>
-              <option value="dekorasyon">İç Mimari Dekorasyon ve Tadilat</option>
+              {services.map(s => (
+                <option key={s.id} value={s.slug}>
+                  {s.title_tr}
+                </option>
+              ))}
             </select>
           </div>
 

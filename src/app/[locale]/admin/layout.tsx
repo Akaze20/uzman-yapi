@@ -29,6 +29,7 @@ export default async function AdminLayout({
           <Link href="/admin">{t('overview')}</Link>
           <Link href="/admin/projects">{t('projects')}</Link>
           <Link href="/admin/faqs">{t('faqs')}</Link>
+          <Link href="/admin/services">{t('services')}</Link>
           <Link href="/admin/settings">{t('siteSettings')}</Link>
           <Link href="/" target="_blank">{t('goToSite')}</Link>
         </nav>

@@ -2,6 +2,7 @@
   width: 100%;
   border-top: 1px solid var(--border);
   line-height: 0;
+  margin-top: 4rem;
 }
 
 .mapContainer {
@@ -16,4 +17,22 @@
   left: 50%;
   transform: translateX(-50%);
   z-index: 10;
+}
+
+.mapBtn {
+  white-space: nowrap;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+  font-weight: bold;
+}
+@media (max-width: 480px) {
+  .mapOverlay {
+    bottom: 20px;
+    width: 90%;
+    text-align: center;
+  }
+  .mapBtn {
+    display: block;
+    width: 100%;
+    padding: 12px;
+  }
 }

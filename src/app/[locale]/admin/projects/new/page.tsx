@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { useRouter } from '@/i18n/routing';
 import { useTranslations } from 'next-intl';
 import styles from '../../admin.module.css';
@@ -11,6 +11,7 @@ export default function NewProject() {
   const [loading, setLoading] = useState(false);
   const [uploading, setUploading] = useState(false);
   const [galleryUploading, setGalleryUploading] = useState<Record<number, boolean>>({});
+  const [services, setServices] = useState<{ id: number; slug: string; title_tr: string }[]>([]);
   const [form, setForm] = useState({
     title_tr: '',
     title_en: '',
@@ -20,6 +21,21 @@ export default function NewProject() {
     category: 'genel'
   });
   const [galleryImages, setGalleryImages] = useState<string[]>([]);
+
+  useEffect(() => {
+    const fetchServices = async () => {
+      try {
+        const res = await fetch('/api/services');
+        if (res.ok) {
+          const data = await res.json();
+          setServices(data);
+        }
+      } catch (err) {
+        console.error('Failed to load services:', err);
+      }
+    };
+    fetchServices();
+  }, []);
 
   const handleAddGalleryImage = () => {
     setGalleryImages([...galleryImages, '']);
@@ -192,10 +208,11 @@ export default function NewProject() {
               }}
             >
               <option value="genel">Genel / Diğer Projeler</option>
-              <option value="alcipan">Alçıpan ve Asma Tavan Sistemleri</option>
-              <option value="yangin-yalitimi">Yangın Yalıtımı ve Yangın Durdurucu</option>
-              <option value="ses-yalitimi">Ses İzolasyonu ve Akustik</option>
-              <option value="dekorasyon">İç Mimari Dekorasyon ve Tadilat</option>
+              {services.map(s => (
+                <option key={s.id} value={s.slug}>
+                  {s.title_tr}
+                </option>
+              ))}
             </select>
           </div>
 

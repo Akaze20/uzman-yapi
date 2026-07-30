@@ -4,17 +4,8 @@ import { prisma } from '@/lib/prisma';
 import { getSetting } from '@/lib/settings';
 import ProjectList from '@/components/ProjectList';
 import styles from '../services.module.css';
-import { Layers, Flame, VolumeX, Paintbrush, Phone } from 'lucide-react';
+import { Phone } from 'lucide-react';
 import { Link } from '@/i18n/routing';
-
-const CATEGORIES = ['alcipan', 'yangin-yalitimi', 'ses-yalitimi', 'dekorasyon'];
-
-const ICON_MAP = {
-  alcipan: Layers,
-  'yangin-yalitimi': Flame,
-  'ses-yalitimi': VolumeX,
-  dekorasyon: Paintbrush
-};
 
 interface Props {
   params: Promise<{ locale: string; slug: string }>;
@@ -22,13 +13,21 @@ interface Props {
 
 export async function generateMetadata({ params }: Props) {
   const { locale, slug } = await params;
-  if (!CATEGORIES.includes(slug)) return {};
+  const isTr = locale === 'tr';
 
-  const t = await getTranslations({ locale, namespace: 'Services' });
-  
+  const service = await prisma.service.findUnique({
+    where: { slug }
+  });
+
+  if (!service) return {};
+
   return {
-    title: t(`${slug}.metaTitle`),
-    description: t(`${slug}.metaDesc`),
+    title: isTr 
+      ? service.metaTitle_tr || `${service.title_tr} - Uzman YP` 
+      : service.metaTitle_en || `${service.title_en} - Uzman YP`,
+    description: isTr 
+      ? service.metaDesc_tr || service.desc_tr 
+      : service.metaDesc_en || service.desc_en,
     alternates: {
       canonical: `/${locale}/services/${slug}`
     }
@@ -38,7 +37,11 @@ export async function generateMetadata({ params }: Props) {
 export default async function ServiceDetailPage({ params }: Props) {
   const { locale, slug } = await params;
   
-  if (!CATEGORIES.includes(slug)) {
+  const service = await prisma.service.findUnique({
+    where: { slug }
+  });
+
+  if (!service) {
     notFound();
   }
 
@@ -52,11 +55,11 @@ export default async function ServiceDetailPage({ params }: Props) {
   });
 
   // Get contact info for CTA
-  const whatsappNum = await getSetting('contact_phone', '+905321234567');
+  const whatsappNum = await getSetting('contact_phone', '+90 533 646 81 51');
   const cleanPhone = whatsappNum.replace(/\s+/g, '').replace('+', '');
   
   // Format WhatsApp Link
-  const serviceTitle = t(`${slug}.title`);
+  const serviceTitle = isTr ? service.title_tr : service.title_en;
   const whatsappMsg = encodeURIComponent(
     isTr 
       ? `Merhaba, Uzman YP sitesinden ulaşıyorum. ${serviceTitle} hizmetiniz hakkında fiyat teklifi ve bilgi alabilir miyim?`
@@ -64,23 +67,23 @@ export default async function ServiceDetailPage({ params }: Props) {
   );
   const whatsappUrl = `https://wa.me/${cleanPhone}?text=${whatsappMsg}`;
 
-  const IconComponent = ICON_MAP[slug as keyof typeof ICON_MAP];
-  const features = t.raw(`${slug}.features`) as string[];
+  const features = (isTr ? service.features_tr : service.features_en)
+    .split('\n')
+    .map(f => f.trim())
+    .filter(Boolean);
 
   return (
     <div className={`container ${styles.detailPage}`}>
       <div className={styles.detailGrid}>
         <div className={`${styles.detailInfo} animate-fade-in`}>
-          <div style={{ display: 'inline-flex', padding: '1rem', borderRadius: '50%', backgroundColor: 'var(--border)', marginBottom: '1.5rem', color: 'var(--accent)' }}>
-            <IconComponent size={48} />
-          </div>
           <h1>{serviceTitle}</h1>
-          <p>{t(`${slug}.desc`)}</p>
+          <p>{isTr ? service.desc_tr : service.desc_en}</p>
 
           <ul className={styles.detailFeatures}>
             {features.map((feat: string, idx: number) => (
               <li key={idx} className="animate-fade-in" style={{ animationDelay: `${0.1 + (idx * 0.05)}s` }}>
-                {feat}</li>
+                {feat}
+              </li>
             ))}
           </ul>
 
@@ -96,24 +99,26 @@ export default async function ServiceDetailPage({ params }: Props) {
         </div>
 
         <div className={`${styles.serviceVisual} animate-fade-in`} style={{ animationDelay: '0.15s' }}>
-          {/* A premium, abstract builder visual for each service category */}
-          <div style={{
-            width: '100%',
-            height: '100%',
-            background: 'linear-gradient(135deg, rgba(255, 255, 255, 0.03) 0%, rgba(255, 255, 255, 0) 100%)',
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'center',
-            flexDirection: 'column',
-            gap: '1rem',
-            border: '1px solid var(--border)',
-            borderRadius: '12px'
-          }}>
-            <IconComponent size={80} style={{ color: 'var(--border)', opacity: 0.5 }} />
-            <span style={{ fontSize: '0.9rem', color: 'var(--text-muted)', letterSpacing: '2px', textTransform: 'uppercase' }}>
-              UZMAN YP Mimarlık & İzolasyon
-            </span>
-          </div>
+          {service.image ? (
+            <img src={service.image} alt={serviceTitle} />
+          ) : (
+            <div style={{
+              width: '100%',
+              height: '100%',
+              background: 'linear-gradient(135deg, rgba(255, 255, 255, 0.03) 0%, rgba(255, 255, 255, 0) 100%)',
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              flexDirection: 'column',
+              gap: '1rem',
+              border: '1px solid var(--border)',
+              borderRadius: '12px'
+            }}>
+              <span style={{ fontSize: '0.9rem', color: 'var(--text-muted)', letterSpacing: '2px', textTransform: 'uppercase' }}>
+                UZMAN YP Mimarlık & İzolasyon
+              </span>
+            </div>
+          )}
         </div>
       </div>
 

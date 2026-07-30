@@ -4,7 +4,7 @@ import { useState, useEffect } from 'react';
 import { useTranslations, useLocale } from 'next-intl';
 import styles from '../admin.module.css';
 
-type ActiveTab = 'hero' | 'about' | 'contact';
+type ActiveTab = 'hero' | 'about' | 'contact' | 'ai';
 
 export default function AdminSettings() {
   const t = useTranslations('Admin');
@@ -45,7 +45,8 @@ export default function AdminSettings() {
     contact_address_en: '',
     contact_phone: '',
     contact_whatsapp: '',
-    contact_email: ''
+    contact_email: '',
+    gemini_api_key: ''
   });
 
   useEffect(() => {
@@ -155,6 +156,22 @@ export default function AdminSettings() {
           }}
         >
           İletişim Bilgileri
+        </button>
+        <button 
+          type="button"
+          onClick={() => setActiveTab('ai')} 
+          style={{
+            padding: '0.8rem 1.5rem', 
+            borderRadius: '8px', 
+            border: 'none',
+            cursor: 'pointer',
+            backgroundColor: activeTab === 'ai' ? 'var(--accent)' : 'var(--border)',
+            color: activeTab === 'ai' ? 'white' : 'var(--foreground)',
+            fontWeight: '500',
+            transition: 'all 0.3s'
+          }}
+        >
+          Yapay Zeka (AI)
         </button>
       </div>
 
@@ -411,6 +428,31 @@ export default function AdminSettings() {
                     style={{ width: '100%', padding: '0.8rem', border: '1px solid var(--border)', borderRadius: '8px' }}
                   />
                 </div>
+              </div>
+            </div>
+          )}
+
+          {activeTab === 'ai' && (
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
+              <h2>Yapay Zeka (AI) Ayarları</h2>
+              <p style={{ color: 'var(--text-muted)' }}>
+                Sitenizin sağ alt köşesindeki Müşteri Temsilcisi asistanının çalışabilmesi için Google Gemini API anahtarını buraya girin.
+              </p>
+              
+              <div style={{ padding: '1.5rem', backgroundColor: 'var(--secondary)', borderRadius: '12px', border: '1px solid var(--border)' }}>
+                <label style={{ display: 'block', marginBottom: '0.8rem', fontWeight: 'bold' }}>
+                  Google Gemini API Anahtarı
+                </label>
+                <input 
+                  type="password" 
+                  placeholder="AIzaSy..."
+                  value={settings.gemini_api_key} 
+                  onChange={e => handleInputChange('gemini_api_key', e.target.value)}
+                  style={{ width: '100%', padding: '1rem', border: '1px solid var(--border)', borderRadius: '8px', fontSize: '1rem', fontFamily: 'monospace' }}
+                />
+                <p style={{ fontSize: '0.85rem', color: 'var(--text-muted)', marginTop: '0.8rem' }}>
+                  Ücretsiz bir API anahtarı almak için <a href="https://aistudio.google.com/app/apikey" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--accent)', textDecoration: 'underline' }}>Google AI Studio</a> adresini ziyaret edin.
+                </p>
               </div>
             </div>
           )}

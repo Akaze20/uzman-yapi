@@ -125,7 +125,13 @@
     "saveFaq": "Save Question",
     "noFaqs": "No questions added yet.",
     "confirmDeleteFaq": "Are you sure you want to delete this question?",
-    "faqListDesc": "Manage the frequently asked questions on your website."
+    "faqListDesc": "Manage the frequently asked questions on your website.",
+    "services": "Services",
+    "newService": "Add New Service",
+    "editService": "Edit Service",
+    "serviceListDesc": "Manage the service categories, images, and details on your website.",
+    "noServices": "No services added yet.",
+    "confirmDeleteService": "Are you sure you want to delete this service? Projects linked to this service category will not be deleted but will stay in 'general'."
   },
   "Faq": {
     "title": "Frequently Asked Questions",
@@ -138,5 +144,11 @@
     "a3": "With our high-density rockwool, acoustic drywalls, and specialized sound barriers, we can absorb 70% to 90% (averaging 45-55 dB) of airborne sound transmission between rooms.",
     "q4": "Do you offer turnkey solutions for interior decoration and renovations?",
     "a4": "Yes; we run all renovation phases, including drywall, plastering, painting, electrical works, and flooring, from a single source as turnkey solutions with our professional crew."
+  },
+  "Chatbot": {
+    "greeting": "Hello! How can I help you with Denge Yapı services today?",
+    "title": "Uzman YP Assistant",
+    "servicesLink": "View Our Services",
+    "contactLink": "Contact Us"
   }
 }

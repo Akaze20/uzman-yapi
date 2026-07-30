@@ -7,6 +7,15 @@ import RootLayoutClient from '@/components/RootLayoutClient';
 import { getSetting } from '@/lib/settings';
 import LocalSchema from '@/components/LocalSchema';
 
+import { Outfit } from 'next/font/google';
+
+const outfit = Outfit({ 
+  subsets: ['latin', 'latin-ext'],
+  weight: ['300', '400', '500', '700'],
+  display: 'swap',
+  variable: '--font-outfit',
+});
+
 export const dynamic = 'force-dynamic';
 
 export const metadata = {
@@ -47,7 +56,7 @@ export default async function LocaleLayout({
       <head>
         <LocalSchema />
       </head>
-      <body>
+      <body className={outfit.className}>
         <NextIntlClientProvider messages={messages}>
           <RootLayoutClient
             contactAddress={contactAddress}

@@ -5,7 +5,7 @@ export async function getSetting(key: string, defaultValue: string): Promise<str
     const setting = await prisma.setting.findUnique({
       where: { key }
     });
-    return setting ? setting.value : defaultValue;
+    return (setting && setting.value.trim() !== '') ? setting.value : defaultValue;
   } catch (error) {
     console.error(`Failed to get setting ${key}:`, error);
     return defaultValue;

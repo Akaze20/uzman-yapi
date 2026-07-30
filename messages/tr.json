@@ -22,7 +22,7 @@
       "features": [
         "Alçıpan Bölme Duvar Sistemleri",
         "Metal İskeletli Asma Tavan",
-        "Alçı Sıva ve Boya Badana İşleri",
+        "İtalyan İşi Dekoratif Boya İşleri",
         "Dekoratif Kartonpiyer ve Işık Bandı",
         "Isı ve Ses Yalıtımlı Duvar Uygulamaları"
       ]
@@ -31,7 +31,7 @@
       "title": "Yangın Yalıtımı ve Yangın Durdurucu Bariyerler",
       "metaTitle": "Pasif Yangın Durdurucu Bariyer & Yangın Yalıtımı - Uzman YP",
       "metaDesc": "Binalarda yangın yayılımını engelleyen uluslararası sertifikalı pasif yangın durdurucu bariyerler, yangın yalıtımlı bölme duvarlar ve yapısal derz çözümleri.",
-      "desc": "Binaların yangın güvenliğini en üst seviyeye çıkarmak amacıyla, tesisat geçişlerinde ve yapısal derzlerde yangın yayılımını engelleyen uluslararası sertifikalı pasif yangın durdurucu (Firestop) sistemler uyguluyoruz.",
+      "desc": "Binaların yangın ve duman güvenliğini en üst seviyeye çıkarmak amacıyla, tesisat geçişlerinde ve yapısal derzlerde yangın yayılımını engelleyen uluslararası sertifikalı pasif yangın durdurucu (Firestop) sistemler uyguluyoruz.",
       "features": [
         "Kablo ve Boru Geçişi Yangın Durdurucuları",
         "Yangına Dayanıklı Bölme Duvarlar",
@@ -125,7 +125,13 @@
     "saveFaq": "Soruyu Kaydet",
     "noFaqs": "Henüz soru eklenmemiş.",
     "confirmDeleteFaq": "Bu soruyu silmek istediğinize emin misiniz?",
-    "faqListDesc": "Sitenizdeki sıkça sorulan soruları yönetin."
+    "faqListDesc": "Sitenizdeki sıkça sorulan soruları yönetin.",
+    "services": "Hizmetler",
+    "newService": "Yeni Hizmet Ekle",
+    "editService": "Hizmeti Düzenle",
+    "serviceListDesc": "Sitenizdeki hizmet alanlarını, görsellerini ve detaylarını yönetin.",
+    "noServices": "Henüz hizmet eklenmemiş.",
+    "confirmDeleteService": "Bu hizmet alanını silmek istediğinize emin misiniz? Bu hizmete bağlı projelerin kategorileri silinmez, 'genel' olarak kalır."
   },
   "Faq": {
     "title": "Merak Edilenler",
@@ -138,5 +144,11 @@
     "a3": "Kullandığımız yüksek yoğunluklu taşyünü, akustik alçıpanlar ve özel ses yalıtım bariyerleri ile odalar arasındaki hava kökenli sesleri %70 ila %90 oranında (ortalama 45-55 dB) sönümleyebiliyoruz.",
     "q4": "İç mimari dekorasyon ve tadilat işlemlerinde anahtar teslim çalışıyor musunuz?",
     "a4": "Evet; alçıpan, sıva, boya badana, elektrik tesisatı, parke döşeme dahil olmak üzere tüm tadilat süreçlerini tek elden, anahtar teslim olarak profesyonel ekiplerimizle yürütüyoruz."
+  },
+  "Chatbot": {
+    "greeting": "Merhaba! Denge Yapı hizmetleri hakkında size nasıl yardımcı olabilirim?",
+    "title": "Uzman YP Asistan",
+    "servicesLink": "Hizmetlerimizi İnceleyin",
+    "contactLink": "İletişime Geçin"
   }
 }

@@ -1,15 +1,8 @@
 import { getTranslations } from 'next-intl/server';
 import { Link } from '@/i18n/routing';
 import styles from './services.module.css';
-import { Layers, Flame, VolumeX, Paintbrush } from 'lucide-react';
+import { prisma } from '@/lib/prisma';
 import MapSection from '@/components/MapSection';
-
-const CATEGORIES = [
-  { slug: 'alcipan', icon: Layers },
-  { slug: 'yangin-yalitimi', icon: Flame },
-  { slug: 'ses-yalitimi', icon: VolumeX },
-  { slug: 'dekorasyon', icon: Paintbrush }
-];
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params;
@@ -29,6 +22,11 @@ export default async function ServicesPage({ params }: { params: Promise<{ local
   const t = await getTranslations({ locale, namespace: 'Services' });
   const isTr = locale === 'tr';
 
+  // Fetch services from database ordered by order index
+  const services = await prisma.service.findMany({
+    orderBy: { order: 'asc' }
+  });
+
   return (
     <>
       <div className={`container ${styles.servicesPage}`}>
@@ -38,24 +36,44 @@ export default async function ServicesPage({ params }: { params: Promise<{ local
         </div>
 
         <div className={styles.grid}>
-          {CATEGORIES.map((cat, idx) => {
-            const Icon = cat.icon;
-            // Features array from JSON translation
-            const features = isTr 
-              ? t.raw(`${cat.slug}.features`) as string[]
-              : t.raw(`${cat.slug}.features`) as string[];
+          {services.map((service, idx) => {
+            const title = isTr ? service.title_tr : service.title_en;
+            const desc = isTr ? service.desc_tr : service.desc_en;
+            const features = (isTr ? service.features_tr : service.features_en)
+              .split('\n')
+              .map(f => f.trim())
+              .filter(Boolean);
 
             return (
               <div 
-                key={cat.slug} 
+                key={service.slug} 
                 className={`glass-panel hover-lift animate-fade-in ${styles.card}`}
                 style={{ animationDelay: `${0.1 + (idx * 0.05)}s` }}
               >
-                <div className={styles.cardIcon}>
-                  <Icon size={40} />
+                <div className={styles.cardImage}>
+                  {service.image ? (
+                    <img src={service.image} alt={title} />
+                  ) : (
+                    <div style={{
+                      width: '100%',
+                      height: '100%',
+                      background: 'linear-gradient(135deg, rgba(229, 57, 53, 0.1) 0%, rgba(0, 0, 0, 0.6) 100%)',
+                      display: 'flex',
+                      alignItems: 'center',
+                      justifyContent: 'center',
+                      flexDirection: 'column',
+                      gap: '0.5rem',
+                      color: 'var(--text-muted)'
+                    }}>
+                      <span style={{ fontSize: '0.9rem', letterSpacing: '1px', textTransform: 'uppercase', opacity: 0.6 }}>
+                        UZMAN YP
+                      </span>
+                    </div>
+                  )}
                 </div>
-                <h3>{t(`${cat.slug}.title`)}</h3>
-                <p>{t(`${cat.slug}.desc`)}</p>
+
+                <h3>{title}</h3>
+                <p>{desc}</p>
                 
                 <ul className={styles.featuresList}>
                   {features.map((feat: string, fIdx: number) => (
@@ -63,7 +81,7 @@ export default async function ServicesPage({ params }: { params: Promise<{ local
                   ))}
                 </ul>
 
-                <Link href={`/services/${cat.slug}`} className={styles.cardLink}>
+                <Link href={`/services/${service.slug}`} className={styles.cardLink}>
                   {isTr ? 'Detayları ve Projeleri Gör →' : 'View Details & Projects →'}
                 </Link>
               </div>
