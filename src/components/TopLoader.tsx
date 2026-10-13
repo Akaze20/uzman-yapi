@@ -3,6 +3,18 @@
 import { useEffect, useRef, useState, useCallback } from 'react';
 import { usePathname } from 'next/navigation';
 
+export function startTopLoader() {
+  if (typeof window !== 'undefined') {
+    window.dispatchEvent(new Event('toploader-start'));
+  }
+}
+
+export function completeTopLoader() {
+  if (typeof window !== 'undefined') {
+    window.dispatchEvent(new Event('toploader-complete'));
+  }
+}
+
 export default function TopLoader() {
   const pathname = usePathname();
   const [visible, setVisible] = useState(false);
@@ -25,7 +37,7 @@ export default function TopLoader() {
       setVisible(false);
       setProgress(0);
       activeRef.current = false;
-    }, 200);
+    }, 250);
     timersRef.current.push(fadeTimer);
   }, [clearTimers]);
 
@@ -50,6 +62,18 @@ export default function TopLoader() {
 
     timersRef.current.push(t1, t2, safetyTimer);
   }, [clearTimers, complete]);
+
+  // Listen for programmatic start / complete events
+  useEffect(() => {
+    const handleCustomStart = () => start();
+    const handleCustomComplete = () => complete();
+    window.addEventListener('toploader-start', handleCustomStart);
+    window.addEventListener('toploader-complete', handleCustomComplete);
+    return () => {
+      window.removeEventListener('toploader-start', handleCustomStart);
+      window.removeEventListener('toploader-complete', handleCustomComplete);
+    };
+  }, [start, complete]);
 
   // Complete progress on any pathname change
   useEffect(() => {

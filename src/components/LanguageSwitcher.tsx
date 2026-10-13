@@ -3,6 +3,7 @@
 import {useLocale} from 'next-intl';
 import {usePathname, useRouter} from '@/i18n/routing';
 import styles from './LanguageSwitcher.module.css';
+import { startTopLoader } from './TopLoader';
 
 export default function LanguageSwitcher() {
   const locale = useLocale();
@@ -10,6 +11,8 @@ export default function LanguageSwitcher() {
   const pathname = usePathname();
 
   const switchLanguage = (newLocale: string) => {
+    if (newLocale === locale) return;
+    startTopLoader();
     router.replace(pathname, {locale: newLocale});
   };
 
