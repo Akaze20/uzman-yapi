@@ -74,7 +74,9 @@
   },
   "About": {
     "title": "About Uzman Yapı",
+    "historyTitle": "Our History",
     "history": "For over 30 years in Turkey and around the world, Uzman Yapı has been providing leader solutions in fire stopping and passive fire protection systems.",
+    "visionTitle": "Our Vision",
     "vision": "We elevate building safety to the highest level with our internationally certified (UL, FM, Intertek) products in the field of steel structure fire insulation, structural joint elements, and fire-resistant coatings."
   },
   "Projects": {
@@ -83,8 +85,15 @@
   },
   "Contact": {
     "title": "Contact Us",
-    "address": "Address",
+    "infoTitle": "Our Contact Information",
+    "formTitle": "Write to Us",
+    "name": "Your Name & Surname",
+    "namePlaceholder": "Name Surname",
     "email": "Email",
+    "emailPlaceholder": "example@email.com",
+    "message": "Your Message",
+    "messagePlaceholder": "Write your message here...",
+    "address": "Address",
     "phone": "Phone",
     "send": "Send Message",
     "copyrightText": "All rights reserved."

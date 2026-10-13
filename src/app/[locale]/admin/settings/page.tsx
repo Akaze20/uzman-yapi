@@ -35,8 +35,12 @@ export default function AdminSettings() {
     home_projects_empty_en: '',
     about_title_tr: '',
     about_title_en: '',
+    about_history_title_tr: '',
+    about_history_title_en: '',
     about_history_tr: '',
     about_history_en: '',
+    about_vision_title_tr: '',
+    about_vision_title_en: '',
     about_vision_tr: '',
     about_vision_en: '',
     contact_title_tr: '',
@@ -343,12 +347,38 @@ export default function AdminSettings() {
 
               <div>
                 <label style={{ display: 'block', marginBottom: '0.5rem', fontWeight: 'bold' }}>
+                  {isTr ? 'Tarihçe Bölüm Başlığı (TR)' : 'History Section Title (EN)'}
+                </label>
+                <input 
+                  type="text" 
+                  placeholder={isTr ? 'Örn: Tarihçemiz' : 'e.g. Our History'}
+                  value={isTr ? settings.about_history_title_tr : settings.about_history_title_en} 
+                  onChange={e => handleInputChange(isTr ? 'about_history_title_tr' : 'about_history_title_en', e.target.value)}
+                  style={{ width: '100%', padding: '0.8rem', border: '1px solid var(--border)', borderRadius: '8px' }}
+                />
+              </div>
+
+              <div>
+                <label style={{ display: 'block', marginBottom: '0.5rem', fontWeight: 'bold' }}>
                   {isTr ? 'Tarihçemiz Metni (TR)' : 'History Text (EN)'}
                 </label>
                 <textarea 
                   rows={6}
                   value={isTr ? settings.about_history_tr : settings.about_history_en} 
                   onChange={e => handleInputChange(isTr ? 'about_history_tr' : 'about_history_en', e.target.value)}
+                  style={{ width: '100%', padding: '0.8rem', border: '1px solid var(--border)', borderRadius: '8px' }}
+                />
+              </div>
+
+              <div>
+                <label style={{ display: 'block', marginBottom: '0.5rem', fontWeight: 'bold' }}>
+                  {isTr ? 'Vizyon Bölüm Başlığı (TR)' : 'Vision Section Title (EN)'}
+                </label>
+                <input 
+                  type="text" 
+                  placeholder={isTr ? 'Örn: Vizyonumuz' : 'e.g. Our Vision'}
+                  value={isTr ? settings.about_vision_title_tr : settings.about_vision_title_en} 
+                  onChange={e => handleInputChange(isTr ? 'about_vision_title_tr' : 'about_vision_title_en', e.target.value)}
                   style={{ width: '100%', padding: '0.8rem', border: '1px solid var(--border)', borderRadius: '8px' }}
                 />
               </div>

@@ -74,7 +74,9 @@
   },
   "About": {
     "title": "Uzman Yapı Hakkında",
+    "historyTitle": "Tarihçemiz",
     "history": "Uzman Yapı, Türkiye ve dünyada yangın durdurucu ve pasif yangın koruma sistemlerinde lider çözümler sunmaktadır.",
+    "visionTitle": "Vizyonumuz",
     "vision": "Çelik yapı yangın yalıtımı, yapısal derz elemanları ve yangına dayanıklı kaplamalar alanında uluslararası sertifikalı (UL, FM, Intertek) ürünlerimizle yapı güvenliğini en üst seviyeye taşıyoruz."
   },
   "Projects": {
@@ -83,8 +85,15 @@
   },
   "Contact": {
     "title": "Bize Ulaşın",
-    "address": "Adres",
+    "infoTitle": "İletişim Bilgilerimiz",
+    "formTitle": "Bize Yazın",
+    "name": "Adınız Soyadınız",
+    "namePlaceholder": "Ad Soyad",
     "email": "E-posta",
+    "emailPlaceholder": "ornek@email.com",
+    "message": "Mesajınız",
+    "messagePlaceholder": "Mesajınızı buraya yazın...",
+    "address": "Adres",
     "phone": "Telefon",
     "send": "Mesaj Gönder",
     "copyrightText": "Tüm hakları saklıdır."

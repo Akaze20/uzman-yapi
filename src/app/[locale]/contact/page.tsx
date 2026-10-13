@@ -28,7 +28,7 @@ export default async function ContactPage({ params }: { params: Promise<{ locale
         
         <div className={styles.grid}>
           <div className={`glass-panel ${styles.infoPanel} animate-fade-in`} style={{animationDelay: '0.2s'}}>
-            <h2>İletişim Bilgilerimiz</h2>
+            <h2>{t('infoTitle')}</h2>
             <div className={styles.infoItem}>
               <MapPin className={styles.icon} />
               <div>
@@ -71,19 +71,19 @@ export default async function ContactPage({ params }: { params: Promise<{ locale
           </div>
 
           <div className={`glass-panel ${styles.formPanel} animate-fade-in`} style={{animationDelay: '0.4s'}}>
-            <h2>Bize Yazın</h2>
+            <h2>{t('formTitle')}</h2>
             <form className={styles.form}>
               <div className={styles.formGroup}>
-                <label>Adınız Soyadınız</label>
-                <input type="text" placeholder="Ad Soyad" />
+                <label>{t('name')}</label>
+                <input type="text" placeholder={t('namePlaceholder')} />
               </div>
               <div className={styles.formGroup}>
                 <label>{t('email')}</label>
-                <input type="email" placeholder="ornek@email.com" />
+                <input type="email" placeholder={t('emailPlaceholder')} />
               </div>
               <div className={styles.formGroup}>
-                <label>Mesajınız</label>
-                <textarea rows={5} placeholder="Mesajınızı buraya yazın..."></textarea>
+                <label>{t('message')}</label>
+                <textarea rows={5} placeholder={t('messagePlaceholder')}></textarea>
               </div>
               <button type="button" className={`btn btn-primary ${styles.submitBtn}`}>
                 {t('send')} <Send size={18} style={{marginLeft: '8px'}} />

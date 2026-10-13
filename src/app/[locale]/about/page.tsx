@@ -8,7 +8,9 @@ export default async function AboutPage({ params }: { params: Promise<{ locale: 
   const t = await getTranslations({locale, namespace: 'About'});
 
   const aboutTitle = await getSetting(`about_title_${locale}`, t('title'));
+  const aboutHistoryTitle = await getSetting(`about_history_title_${locale}`, t('historyTitle'));
   const aboutHistory = await getSetting(`about_history_${locale}`, t('history'));
+  const aboutVisionTitle = await getSetting(`about_vision_title_${locale}`, t('visionTitle'));
   const aboutVision = await getSetting(`about_vision_${locale}`, t('vision'));
 
   return (
@@ -19,12 +21,12 @@ export default async function AboutPage({ params }: { params: Promise<{ locale: 
         </div>
         
         <div className={`glass-panel ${styles.contentBox} animate-fade-in`} style={{animationDelay: '0.05s'}}>
-          <h2>Tarihçemiz</h2>
+          <h2>{aboutHistoryTitle}</h2>
           <p>{aboutHistory}</p>
         </div>
 
         <div className={`glass-panel ${styles.contentBox} animate-fade-in`} style={{animationDelay: '0.1s', marginTop: '2rem'}}>
-          <h2>Vizyonumuz</h2>
+          <h2>{aboutVisionTitle}</h2>
           <p>{aboutVision}</p>
         </div>
       </div>
