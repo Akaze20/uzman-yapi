@@ -51,38 +51,66 @@ export interface FaqItem {
   order?: number;
 }
 
-export async function getSetting(key: string, defaultValue: string): Promise<string> {
+let settingsCache: Record<string, string> | null = null;
+let settingsCacheTime = 0;
+const CACHE_TTL = 60 * 1000; // 60 seconds
+
+async function loadAllSettings(): Promise<Record<string, string>> {
+  const now = Date.now();
+  if (settingsCache && (now - settingsCacheTime < CACHE_TTL)) {
+    return settingsCache;
+  }
   try {
-    const snap = await getDoc(doc(db, 'settings', key));
-    if (snap.exists()) {
-      const data = snap.data();
-      if (data && typeof data.value === 'string' && data.value.trim() !== '') {
-        return data.value;
-      }
-    }
-    return defaultValue;
-  } catch (error) {
-    console.error(`Error fetching setting ${key}:`, error);
-    return defaultValue;
+    const snap = await getDocs(collection(db, 'settings'));
+    const map: Record<string, string> = {};
+    snap.docs.forEach(d => {
+      const val = d.data()?.value;
+      if (typeof val === 'string') map[d.id] = val;
+    });
+    settingsCache = map;
+    settingsCacheTime = now;
+    return map;
+  } catch (err) {
+    console.error('Failed to load settings:', err);
+    return settingsCache || {};
   }
 }
 
+export async function getSetting(key: string, defaultValue: string): Promise<string> {
+  const all = await loadAllSettings();
+  const val = all[key];
+  if (val && val.trim() !== '') return val;
+  return defaultValue;
+}
+
 export async function getSettings(keys: Record<string, string>): Promise<Record<string, string>> {
+  const all = await loadAllSettings();
   const result: Record<string, string> = {};
   for (const [key, defaultValue] of Object.entries(keys)) {
-    result[key] = await getSetting(key, defaultValue);
+    const val = all[key];
+    result[key] = (val && val.trim() !== '') ? val : defaultValue;
   }
   return result;
 }
 
+let servicesCache: ServiceItem[] | null = null;
+let servicesCacheTime = 0;
+
 export async function getServices(): Promise<ServiceItem[]> {
+  const now = Date.now();
+  if (servicesCache && (now - servicesCacheTime < CACHE_TTL)) {
+    return servicesCache;
+  }
   try {
     const q = query(collection(db, 'services'), orderBy('order', 'asc'));
     const snap = await getDocs(q);
-    return snap.docs.map(d => ({ ...(d.data() as ServiceItem), slug: d.id }));
+    const list = snap.docs.map(d => ({ ...(d.data() as ServiceItem), slug: d.id }));
+    servicesCache = list;
+    servicesCacheTime = now;
+    return list;
   } catch (error) {
     console.error('Error fetching services from Firestore:', error);
-    return [];
+    return servicesCache || [];
   }
 }
 

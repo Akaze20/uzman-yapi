@@ -4,6 +4,7 @@ import { usePathname } from 'next/navigation';
 import Navbar from './Navbar';
 import Footer from './Footer';
 import AIChatbot from './AIChatbot';
+import TopLoader from './TopLoader';
 
 interface RootLayoutClientProps {
   children: React.ReactNode;
@@ -32,6 +33,7 @@ export default function RootLayoutClient({
 
   return (
     <>
+      <TopLoader />
       <Navbar />
       <main>{children}</main>
       <Footer

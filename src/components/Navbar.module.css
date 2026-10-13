@@ -165,8 +165,17 @@
   .navLinks a {
     font-size: 1.2rem;
     width: 100%;
-    padding: 12px 0;
+    padding: 12px 14px;
+    border-radius: 8px;
     color: #ffffff !important;
+    transition: background-color 0.15s ease, color 0.15s ease, transform 0.1s ease;
+    -webkit-tap-highlight-color: rgba(229, 57, 53, 0.4);
+  }
+
+  .navLinks a:active {
+    background-color: rgba(229, 57, 53, 0.25);
+    color: var(--accent) !important;
+    transform: scale(0.97);
   }
 
   .dropdownMenu {

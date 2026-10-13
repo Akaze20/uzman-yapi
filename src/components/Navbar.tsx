@@ -33,23 +33,23 @@ export default function Navbar() {
         </button>
 
         <nav className={`${styles.navLinks} ${isMobileMenuOpen ? styles.mobileOpen : ''}`}>
-          <Link href="/" onClick={closeMenu}>{t('home')}</Link>
-          <Link href="/about" onClick={closeMenu}>{t('about')}</Link>
+          <Link href="/" prefetch={true} onClick={closeMenu}>{t('home')}</Link>
+          <Link href="/about" prefetch={true} onClick={closeMenu}>{t('about')}</Link>
           
           <div className={styles.dropdown}>
-            <Link href="/services" className={styles.dropdownToggle} onClick={closeMenu}>
+            <Link href="/services" prefetch={true} className={styles.dropdownToggle} onClick={closeMenu}>
               {t('services')}
             </Link>
             <div className={styles.dropdownMenu}>
-              <Link href="/services/alcipan" onClick={closeMenu}>{tServices('alcipan.title')}</Link>
-              <Link href="/services/yangin-yalitimi" onClick={closeMenu}>{tServices('yangin-yalitimi.title')}</Link>
-              <Link href="/services/ses-yalitimi" onClick={closeMenu}>{tServices('ses-yalitimi.title')}</Link>
-              <Link href="/services/dekorasyon" onClick={closeMenu}>{tServices('dekorasyon.title')}</Link>
+              <Link href="/services/alcipan" prefetch={true} onClick={closeMenu}>{tServices('alcipan.title')}</Link>
+              <Link href="/services/yangin-yalitimi" prefetch={true} onClick={closeMenu}>{tServices('yangin-yalitimi.title')}</Link>
+              <Link href="/services/ses-yalitimi" prefetch={true} onClick={closeMenu}>{tServices('ses-yalitimi.title')}</Link>
+              <Link href="/services/dekorasyon" prefetch={true} onClick={closeMenu}>{tServices('dekorasyon.title')}</Link>
             </div>
           </div>
 
-          <Link href="/projects" onClick={closeMenu}>{t('projects')}</Link>
-          <Link href="/contact" onClick={closeMenu}>{t('contact')}</Link>
+          <Link href="/projects" prefetch={true} onClick={closeMenu}>{t('projects')}</Link>
+          <Link href="/contact" prefetch={true} onClick={closeMenu}>{t('contact')}</Link>
           
           <div className={styles.mobileNavActions}>
             <LanguageSwitcher />
