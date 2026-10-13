@@ -1,6 +1,6 @@
 import { getTranslations } from 'next-intl/server';
 import { notFound } from 'next/navigation';
-import { prisma } from '@/lib/prisma';
+import { getServiceBySlug, getProjects } from '@/lib/firestore';
 import { getSetting } from '@/lib/settings';
 import ProjectList from '@/components/ProjectList';
 import styles from '../services.module.css';
@@ -15,9 +15,7 @@ export async function generateMetadata({ params }: Props) {
   const { locale, slug } = await params;
   const isTr = locale === 'tr';
 
-  const service = await prisma.service.findUnique({
-    where: { slug }
-  });
+  const service = await getServiceBySlug(slug);
 
   if (!service) return {};
 
@@ -37,9 +35,7 @@ export async function generateMetadata({ params }: Props) {
 export default async function ServiceDetailPage({ params }: Props) {
   const { locale, slug } = await params;
   
-  const service = await prisma.service.findUnique({
-    where: { slug }
-  });
+  const service = await getServiceBySlug(slug);
 
   if (!service) {
     notFound();
@@ -48,11 +44,8 @@ export default async function ServiceDetailPage({ params }: Props) {
   const t = await getTranslations({ locale, namespace: 'Services' });
   const isTr = locale === 'tr';
 
-  // Fetch category-specific projects from database
-  const projects = await prisma.project.findMany({
-    where: { category: slug },
-    orderBy: { createdAt: 'desc' }
-  });
+  // Fetch category-specific projects from Firestore
+  const projects = await getProjects(slug);
 
   // Get contact info for CTA
   const whatsappNum = await getSetting('contact_phone', '+90 533 646 81 51');

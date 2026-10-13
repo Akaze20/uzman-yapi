@@ -43,3 +43,7 @@ next-env.d.ts
 # local databases
 *.db
 *.db-journal
+
+# firebase
+.firebase/
+data-backup.json

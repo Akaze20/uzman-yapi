@@ -1,6 +1,6 @@
 import {getTranslations} from 'next-intl/server';
 import styles from './page.module.css';
-import { prisma } from '@/lib/prisma';
+import { getProjects } from '@/lib/firestore';
 import ProjectList from '@/components/ProjectList';
 import MapSection from '@/components/MapSection';
 
@@ -8,9 +8,7 @@ export default async function ProjectsPage({ params }: { params: Promise<{ local
   const { locale } = await params;
   const t = await getTranslations({locale, namespace: 'Projects'});
 
-  const projects = await prisma.project.findMany({
-    orderBy: { createdAt: 'desc' }
-  });
+  const projects = await getProjects();
 
   return (
     <>

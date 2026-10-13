@@ -1,5 +1,5 @@
 import { NextResponse } from 'next/server';
-import { prisma } from '@/lib/prisma';
+import { saveContact } from '@/lib/firestore';
 
 export async function POST(req: Request) {
   try {
@@ -13,16 +13,14 @@ export async function POST(req: Request) {
       );
     }
 
-    const contact = await prisma.contact.create({
-      data: {
-        name,
-        phone,
-        email: email || null,
-        message: message || null,
-      },
+    const docRef = await saveContact({
+      name,
+      phone,
+      email: email || null,
+      message: message || null,
     });
 
-    return NextResponse.json({ success: true, data: contact });
+    return NextResponse.json({ success: true, id: docRef.id });
   } catch (error: any) {
     console.error('Contact API Error:', error);
     return NextResponse.json(

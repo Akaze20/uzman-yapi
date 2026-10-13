@@ -5,7 +5,7 @@ import { ChevronDown, ChevronUp } from 'lucide-react';
 import styles from './FaqAccordion.module.css';
 
 interface FaqItem {
-  id: number;
+  id: number | string;
   question: string;
   answer: string;
 }
@@ -17,9 +17,9 @@ interface FaqAccordionProps {
 }
 
 export default function FaqAccordion({ title, desc, items }: FaqAccordionProps) {
-  const [openId, setOpenId] = useState<number | null>(null);
+  const [openId, setOpenId] = useState<number | string | null>(null);
 
-  const toggleItem = (id: number) => {
+  const toggleItem = (id: number | string) => {
     setOpenId(openId === id ? null : id);
   };
 

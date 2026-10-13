@@ -1,8 +1,6 @@
 import { streamText, convertToModelMessages } from 'ai';
 import { createGoogleGenerativeAI } from '@ai-sdk/google';
-import { PrismaClient } from '@prisma/client';
-
-const prisma = new PrismaClient();
+import { getSetting, getServices } from '@/lib/firestore';
 
 // Allow streaming responses up to 30 seconds
 export const maxDuration = 30;
@@ -12,9 +10,9 @@ export async function POST(req: Request) {
     const { messages } = await req.json();
     console.log('RECEIVED MESSAGES:', JSON.stringify(messages, null, 2));
 
-    // Fetch API key from settings
-    const apiSetting = await prisma.setting.findUnique({ where: { key: 'gemini_api_key' } });
-    const apiKey = apiSetting?.value || process.env.GEMINI_API_KEY;
+    // Fetch API key from Firestore settings
+    const settingKey = await getSetting('gemini_api_key', '');
+    const apiKey = settingKey || process.env.GEMINI_API_KEY;
 
     if (!apiKey) {
       return new Response(
@@ -27,10 +25,8 @@ export async function POST(req: Request) {
       apiKey: apiKey,
     });
 
-    // Fetch dynamic services context from the database
-    const services = await prisma.service.findMany({
-      select: { title_tr: true, features_tr: true, desc_tr: true },
-    });
+    // Fetch dynamic services context from Firestore
+    const services = await getServices();
 
     const servicesContext = services
       .map(

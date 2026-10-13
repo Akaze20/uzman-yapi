@@ -2,7 +2,7 @@ import {getTranslations} from 'next-intl/server';
 import {Link} from '@/i18n/routing';
 import {ArrowRight} from 'lucide-react';
 import styles from './page.module.css';
-import { prisma } from '@/lib/prisma';
+import { getProjects, getFaqs } from '@/lib/firestore';
 import { getSetting } from '@/lib/settings';
 import FaqAccordion from '@/components/FaqAccordion';
 import MapSection from '@/components/MapSection';
@@ -14,14 +14,9 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
   const tProjects = await getTranslations({locale, namespace: 'Projects'});
   const tFaq = await getTranslations({locale, namespace: 'Faq'});
 
-  const recentProjects = await prisma.project.findMany({
-    orderBy: { createdAt: 'desc' },
-    take: 3
-  });
+  const recentProjects = await getProjects(undefined, 3);
 
-  const faqs = await prisma.faq.findMany({
-    orderBy: { order: 'asc' }
-  });
+  const faqs = await getFaqs();
 
 
   const heroTitle = await getSetting(`hero_title_${locale}`, t('title'));

@@ -1,7 +1,7 @@
 import { MetadataRoute } from 'next';
-import { prisma } from '@/lib/prisma';
+import { getProjects } from '@/lib/firestore';
 
-const BASE_URL = 'https://uzman-yapi-kczv.vercel.app';
+const BASE_URL = 'https://denge-yapi.web.app';
 const LOCALES = ['tr', 'en'];
 const STATIC_PAGES = ['', '/about', '/contact', '/projects', '/services'];
 const SERVICES = ['alcipan', 'yangin-yalitimi', 'ses-yalitimi', 'dekorasyon'];
@@ -35,9 +35,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
 
   // 3. Generate entries for dynamic projects in all locales
   try {
-    const projects = await prisma.project.findMany({
-      select: { id: true, updatedAt: true }
-    });
+    const projects = await getProjects();
 
     for (const locale of LOCALES) {
       for (const project of projects) {

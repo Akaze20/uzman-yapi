@@ -1,7 +1,7 @@
 import { getTranslations } from 'next-intl/server';
 import { Link } from '@/i18n/routing';
 import styles from './services.module.css';
-import { prisma } from '@/lib/prisma';
+import { getServices } from '@/lib/firestore';
 import MapSection from '@/components/MapSection';
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }) {
@@ -22,10 +22,8 @@ export default async function ServicesPage({ params }: { params: Promise<{ local
   const t = await getTranslations({ locale, namespace: 'Services' });
   const isTr = locale === 'tr';
 
-  // Fetch services from database ordered by order index
-  const services = await prisma.service.findMany({
-    orderBy: { order: 'asc' }
-  });
+  // Fetch services from Firestore ordered by order index
+  const services = await getServices();
 
   return (
     <>

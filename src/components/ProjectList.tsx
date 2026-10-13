@@ -4,13 +4,13 @@ import { useState } from 'react';
 import styles from '@/app/[locale]/projects/page.module.css';
 
 interface Project {
-  id: number;
+  id: number | string;
   title_tr: string;
   title_en: string;
   desc_tr: string;
   desc_en: string;
-  image: string | null;
-  images: string | null;
+  image?: string | null;
+  images?: string | null;
 }
 
 interface ProjectListProps {
@@ -33,7 +33,7 @@ export default function ProjectList({ projects, locale }: ProjectListProps) {
     setActiveLightboxImage(null);
   };
 
-  const getAdditionalImages = (imagesStr: string | null): string[] => {
+  const getAdditionalImages = (imagesStr?: string | null): string[] => {
     if (!imagesStr) return [];
     return imagesStr.split(',').map(url => url.trim()).filter(url => url.length > 0);
   };
